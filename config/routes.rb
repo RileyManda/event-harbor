@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'pages/home'
+  root 'pages#home'
   resources :categories
   resources :participants
-  get 'home/index'
   resources :homes
   resources :events
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

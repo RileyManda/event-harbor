@@ -15,6 +15,10 @@
     <%= form.label :name %>
     <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
+   <div class="my-5">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
 
   <div class="my-5">
     <%= form.label :description %>
@@ -22,18 +26,63 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :image %>
-    <%= form.text_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.label :images %>
+    <%= form.text_field :images, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :reserved %>
-    <%= form.check_box :reserved, class: "block mt-2 h-5 w-5" %>
+    <%= form.label :reservation %>
+    <%= form.check_box :reservation, class: "block mt-2 h-5 w-5" %>
+  </div>
+
+   <div class="my-5">
+    <%= form.label :price %>
+    <%= form.text_field :price, class: "block mt-2 h-5 w-5" %>
+  </div>
+
+    <div class="my-5">
+    <%= form.label :tickets_left %>
+    <%= form.text_field :tickets_left, class: "block mt-2 h-5 w-5" %>
+  </div>
+
+    <div class="my-5">
+    <%= form.label :date %>
+    <%= form.text_field :date, class: "block mt-2 h-5 w-5" %>
   </div>
 
   <div class="my-5">
+    <%= form.label :location %>
+    <%= form.text_field :location, class: "block mt-2 h-5 w-5" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :start_time %>
+    <%= form.text_field :start_time, class: "block mt-2 h-5 w-5" %>
+  </div>
+
+    <div class="my-5">
+    <%= form.label :end_time %>
+    <%= form.text_field :end_time, class: "block mt-2 h-5 w-5" %>
+  </div>
+
+    <div class="my-5">
+    <%= form.label :avatar %>
+    <%= form.text_field :avatar, class: "block mt-2 h-5 w-5" %>
+  </div>
+
+      <div class="my-5">
+    <%= form.label :banner %>
+    <%= form.text_field :banner, class: "block mt-2 h-5 w-5" %>
+  </div>
+  <div class="my-5">
+    <%= form.label :capacity %>
+    <%= form.text_field :capacity, class: "block mt-2 h-5 w-5" %>
+  </div>
+
+<div class="my-5">
     <%= form.label :visibility %>
-    <%= form.check_box :visibility, class: "block mt-2 h-5 w-5" %>
+    <%= form.check_box :visibility, { class: "block mt-2 h-5 w-5" }, false, true %>
+    <%= form.hidden_field :visibility, value: false %>
   </div>
 
   <div class="inline">
