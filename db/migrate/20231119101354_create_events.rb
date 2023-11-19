@@ -15,6 +15,7 @@ class CreateEvents < ActiveRecord::Migration[7.1]
       t.timestamp :end_time
       t.string   :avatar
       t.string   :banner
+      t.integer :category_id
 
       t.timestamps
     end
