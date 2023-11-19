@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :participants
   get 'home/index'
   resources :homes
   resources :events
