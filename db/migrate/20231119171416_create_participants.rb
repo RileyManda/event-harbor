@@ -4,6 +4,7 @@ class CreateParticipants < ActiveRecord::Migration[7.1]
       t.string :name
       t.string :email
       t.integer :event_id
+      t.integer :participant_id
       t.boolean :attending
 
       t.timestamps
