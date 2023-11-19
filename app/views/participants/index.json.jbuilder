@@ -1,1 +1,1 @@
-json.array! @participants, partial: "participants/participant", as: :participant
+json.array! @participants, partial: 'participants/participant', as: :participant
