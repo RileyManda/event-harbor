@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+  resources :homes
   resources :events
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
