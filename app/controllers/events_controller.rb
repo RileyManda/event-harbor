@@ -22,6 +22,7 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
+    @event.tickets_left = @event.tickets
 
     respond_to do |format|
       if @event.save
@@ -65,6 +66,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
   def event_params
-  params.require(:event).permit(:name, :title, :description, :images, :reservation, :visibility, :price, :capacity, :tickets_left, :date, :location, :start_time, :end_time, :avatar, :banner, :category_id)
+  params.require(:event).permit(:name, :title, :description, :images, :reservation, :visibility, :price, :capacity, :tickets_left, :date, :location, :start_time, :end_time, :avatar, :banner, :category_id, :tickets)
   end
 end

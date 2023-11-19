@@ -25,59 +25,59 @@
     <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :images %>
-    <%= form.text_field :images, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :reservation %>
-    <%= form.check_box :reservation, class: "block mt-2 h-5 w-5" %>
-  </div>
 
    <div class="my-5">
     <%= form.label :price %>
-    <%= form.text_field :price, class: "block mt-2 h-5 w-5" %>
+    <%= form.text_field :price, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-    <div class="my-5">
-    <%= form.label :tickets_left %>
-    <%= form.text_field :tickets_left, class: "block mt-2 h-5 w-5" %>
+ <div class="my-5">
+    <%= form.label :tickets %>
+    <%= form.number_field :tickets, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
     <div class="my-5">
     <%= form.label :date %>
-    <%= form.text_field :date, class: "block mt-2 h-5 w-5" %>
+    <%= form.text_field :date, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
     <%= form.label :location %>
-    <%= form.text_field :location, class: "block mt-2 h-5 w-5" %>
+    <%= form.text_field :location, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
     <%= form.label :start_time %>
-    <%= form.text_field :start_time, class: "block mt-2 h-5 w-5" %>
+    <%= form.text_field :start_time, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
     <div class="my-5">
     <%= form.label :end_time %>
-    <%= form.text_field :end_time, class: "block mt-2 h-5 w-5" %>
+    <%= form.text_field :end_time, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-    <div class="my-5">
-    <%= form.label :avatar %>
-    <%= form.text_field :avatar, class: "block mt-2 h-5 w-5" %>
-  </div>
-
-      <div class="my-5">
-    <%= form.label :banner %>
-    <%= form.text_field :banner, class: "block mt-2 h-5 w-5" %>
-  </div>
   <div class="my-5">
     <%= form.label :capacity %>
-    <%= form.text_field :capacity, class: "block mt-2 h-5 w-5" %>
+    <%= form.text_field :capacity, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
+  <div class="my-5">
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: "Select a category" }, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+<div class="my-5">
+    <%= form.label :avatar %>
+    <%= form.text_field :avatar, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= image_tag(event.avatar, alt: 'Event Avatar') if event.avatar.present? %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :banner %>
+    <%= form.text_field :banner, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= image_tag(event.banner, alt: 'Event Banner') if event.banner.present? %>
+  </div>
+
+
 
 <div class="my-5">
     <%= form.label :visibility %>

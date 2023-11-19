@@ -28,6 +28,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_19_175029) do
     t.boolean "reservation"
     t.boolean "visibility"
     t.integer "price"
+    t.integer "capacity"
+    t.integer "tickets"
     t.integer "tickets_left"
     t.datetime "date"
     t.string "location"

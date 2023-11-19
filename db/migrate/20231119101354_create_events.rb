@@ -8,6 +8,8 @@ class CreateEvents < ActiveRecord::Migration[7.1]
       t.boolean :reservation
       t.boolean :visibility
       t.integer :price
+      t.integer :capacity
+      t.integer   :tickets
       t.integer   :tickets_left
       t.datetime :date
       t.string :location
