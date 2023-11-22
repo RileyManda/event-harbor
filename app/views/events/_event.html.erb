@@ -11,12 +11,12 @@
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Avatar:</strong>
-    <%= event.avatar %>
+    <%= image_tag(event.avatar, alt: 'Event Avatar') if event.avatar.present? %>
   </p>
 
-    <p class="my-5">
+  <p class="my-5">
     <strong class="block font-medium mb-1">Banner:</strong>
-    <%= event.banner %>
+    <%= image_tag(event.banner, alt: 'Event Banner') if event.banner.present? %>
   </p>
 
   <p class="my-5">
