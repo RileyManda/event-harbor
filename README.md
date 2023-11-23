@@ -1,5 +1,5 @@
 <div align="center">
- <!-- <img src="./app/assets/images/app-logo.jpeg" alt="logo" width="140"  height="auto" /> -->
+ <img src="./app/assets/images/app-logo.jpeg" alt="logo" width="140"  height="auto" />
   <br/>
   <h1><b>Event Harbor</b></h1>
 
@@ -99,7 +99,7 @@ Event Harbor is a Rails web application that allows users to add, update, and de
 
 
   <ul>
-    <li><a href="https://tailwindui.com/">TailwindUI</a></li>
+    <li><a href="https://tailwindui.com/">TailwindCSS</a></li>
   </ul>
 
 
