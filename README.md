@@ -166,7 +166,9 @@ To run the project, you will need to execute:
 
 
 ```sh
-  rails server
+
+  ./bin/dev
+  
 ```
 
 
