@@ -8,8 +8,7 @@
 
     <div class="rounded-md shadow-sm -space-y-px">
       <div>
-        <%= f.label :email, class: 'sr-only' %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email",class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
       </div>
 
       <div>
@@ -17,12 +16,12 @@
         <% if @minimum_password_length %>
           <p class="text-xs text-gray-500 mb-1"><em>(<%= @minimum_password_length %> characters minimum)</em></p>
         <% end %>
-        <%= f.password_field :password, autocomplete: "new-password", class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
+        <%= f.password_field :password, autocomplete: "new-password",placeholder: "Password", class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
       </div>
 
       <div>
         <%= f.label :password_confirmation, class: 'sr-only' %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "Confirm Password" , class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
       </div>
     </div>
 
