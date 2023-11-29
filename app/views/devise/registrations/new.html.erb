@@ -1,14 +1,24 @@
-<div class="max-w-md mx-auto mt-8">
-  <div class="text-center">
-    <h2 class="text-3xl font-extrabold text-gray-900">Sign up</h2>
+<div class="flex h-screen">
+  <!-- Left Pane -->
+  <div class="hidden lg:flex items-center justify-center flex-1 bg-white text-black">
+    <div class="max-w-md text-center">
+    <%= render "devise/shared/authbg"%>
+    </div>
   </div>
+    <!-- Right Pane -->
+<div class="w-full bg-gray-100 lg:w-1/2 flex items-center justify-center">
+    <div class="max-w-md w-full p-6">
+      <h1 class="text-3xl font-semibold mb-6 text-black text-center">Sign Up</h1>
+      <h1 class="text-sm font-semibold mb-6 text-gray-500 text-center">Join Our Community now for all time access </h1>
 
+
+     <div class="w-screen">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'mt-8 space-y-6' }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="rounded-md shadow-sm -space-y-px">
       <div>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email",class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email", class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
       </div>
 
       <div>
@@ -31,4 +41,6 @@
   <% end %>
 
   <%= render "devise/shared/links" %>
+</div>
+</div>
 </div>
