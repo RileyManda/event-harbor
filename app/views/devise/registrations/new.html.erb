@@ -1,15 +1,25 @@
-<div class="max-w-md mx-auto mt-8">
-  <div class="text-center">
-    <h2 class="text-3xl font-extrabold text-gray-900">Sign up</h2>
+<div class="flex h-screen">
+  <!-- Left Pane -->
+  <div class="hidden lg:flex items-center justify-center flex-1 bg-white text-black">
+    <div class="max-w-md text-center">
+    <%= render "devise/shared/authbg"%>
+    </div>
   </div>
+    <!-- Right Pane -->
+<div class="w-full bg-gray-100 lg:w-1/2 flex items-center justify-center">
+    <div class="max-w-md w-full p-6">
+        <%= render "devise/shared/auth_icon"%>
+      <h1 class="text-3xl font-semibold mb-6 text-black text-center">Sign Up</h1>
+      <h1 class="text-sm font-semibold mb-6 text-gray-500 text-center">Join Our Community now for all time access </h1>
 
+
+     <div class="w-screen">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'mt-8 space-y-6' }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="rounded-md shadow-sm -space-y-px">
       <div>
-        <%= f.label :email, class: 'sr-only' %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email", class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
       </div>
 
       <div>
@@ -17,12 +27,12 @@
         <% if @minimum_password_length %>
           <p class="text-xs text-gray-500 mb-1"><em>(<%= @minimum_password_length %> characters minimum)</em></p>
         <% end %>
-        <%= f.password_field :password, autocomplete: "new-password", class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
+        <%= f.password_field :password, autocomplete: "new-password",placeholder: "Password", class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
       </div>
 
       <div>
         <%= f.label :password_confirmation, class: 'sr-only' %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "Confirm Password" , class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
       </div>
     </div>
 
@@ -30,6 +40,9 @@
       <%= f.submit "Sign up", class: 'group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' %>
     </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
+   <div class="mt-10 text-center text-sm text-gray-500">
+        <%= render "devise/shared/links" %>
+      </div>
+</div>
+</div>
 </div>
