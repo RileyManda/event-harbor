@@ -14,8 +14,7 @@
       <h1 class="text-3xl font-semibold mb-6 text-black text-center">Sign in</h1>
       <h1 class="text-sm font-semibold mb-6 text-gray-500 text-center">Sign in and join in on some amazing events </h1>
 
-
-     <div class="w-screen">
+     <div class="w-screen justify-between">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'mt-8 space-y-6 ' }) do |f| %>
       <div class="rounded-md shadow-sm space-y-1">
         <div class="space-y-1 mx-4">
@@ -37,8 +36,13 @@
         <%= f.submit "Log in", class: 'group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' %>
       </div>
     <% end %>
-    <%= render "devise/shared/links"%>
   </div>
+  <div class="mt-10 text-center text-sm text-gray-500">
+        <%= render "devise/shared/links" %>
+        Not a member?
+        <%= link_to "Start a 14 day free trial", new_registration_path(resource_name), class: 'font-semibold leading-6 text-indigo-600 hover:text-indigo-500 ' %>
+      </div>
     </div>
+
   </div>
 </div>
