@@ -1,0 +1,31 @@
+<div class="flex h-screen">
+  <!-- Left Pane -->
+  <div class="hidden lg:flex items-center justify-center flex-1 bg-white text-black">
+    <div class="max-w-md text-center">
+    <%= render "shared/authbg"%>
+    </div>
+  </div>
+    <!-- Right Pane -->
+  <div class="w-full bg-gray-100 lg:w-1/2 flex items-center justify-center ">
+    <div class="max-w-md w-full p-6">
+        <%= render "shared/auth_icon"%>
+<h2 class="text-3xl font-semibold mb-6 text-black text-center">Forgot your password?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Enter Email address to reset",class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions",class: 'group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' %>
+  </div>
+<% end %>
+
+   <div class="mt-10 text-center text-sm text-gray-500">
+       <%= render "devise/shared/links"%>
+
+    </div>
+</div>
+</div>
+</div>
