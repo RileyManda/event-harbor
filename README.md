@@ -1,5 +1,5 @@
 <div align="center">
- <!-- <img src="./app/assets/images/app-logo.jpeg" alt="logo" width="140"  height="auto" /> -->
+ <img src="./app/assets/images/e-harbor-logo.png" alt="logo" width="140"  height="auto" />
   <br/>
   <h1><b>Event Harbor</b></h1>
 
@@ -166,7 +166,9 @@ To run the project, you will need to execute:
 
 
 ```sh
-  rails server
+
+  ./bin/dev
+
 ```
 
 
