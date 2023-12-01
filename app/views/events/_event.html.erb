@@ -9,10 +9,10 @@
     <%= event.description %>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Avatar:</strong>
-    <%= image_tag(event.avatar, alt: 'Event Avatar') if event.avatar.present? %>
-  </p>
+  <div class="my-5 mb-3 w-32 h-32 rounded-full shadow-lg mx-auto">
+    <strong class="block font-medium mb-1">Avatar</strong>
+    <%= image_tag(event.avatar, alt: 'Event Avatar', class: 'mb-3 w-32 h-32 rounded-full shadow-lg mx-auto') if event.avatar.present? %>
+  </div>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Banner:</strong>
