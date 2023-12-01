@@ -8,11 +8,12 @@
     <strong class="block font-medium mb-1">Description:</strong>
     <%= event.description %>
   </p>
+    <div class="relative">
+     <%= image_tag(event.avatar, alt: 'Event Avatar', class: 'w-10 h-10 rounded-full') if event.avatar.present? %>
+    <span class="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+</div>
 
-  <div class="my-5 mb-3 w-32 h-32 rounded-full shadow-lg mx-auto">
-    <strong class="block font-medium mb-1">Avatar</strong>
-    <%= image_tag(event.avatar, alt: 'Event Avatar', class: 'mb-3 w-32 h-32 rounded-full shadow-lg mx-auto') if event.avatar.present? %>
-  </div>
+
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Banner:</strong>
