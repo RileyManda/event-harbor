@@ -1,15 +1,32 @@
-<div class="w-full">
+<%= render "shared/dashboard_layout" %>
+<%= render "shared/trending_events" %>
+
+<div class="mx-auto md:w-2/3 w-full">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center mb-5">
     <h1 class="font-bold text-4xl">Events</h1>
-    <%= link_to "Categories", categories_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
     <%= link_to "New event", new_event_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="events" class="min-w-full">
-    <%= render @events %>
+  <div id="events" class="grid grid-cols-2 md:grid-cols-3 gap-6 drop-shadow-md">
+    <% @events.each do |event| %>
+      <%= link_to event_path(event) do %>
+        <div class="bg-white p-4 rounded-lg shadow-md">
+        <div class="relative">
+      <%= image_tag(event.avatar, alt: 'Event Avatar', class: 'w-10 h-10 rounded-full') if event.avatar.present? %>
+      <span class="bottom-0 left-7 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+      </div>
+          <%= image_tag(event.banner, alt: 'Event Banner', class: 'rounded-t-lg') if event.banner.present? %>
+          <h2 class="text-lg font-semibold mb-2"><%= event.name %></h2>
+          <p class="text-gray-600"><%= event.description %></p>
+          <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Happening Now</span>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
+
+<%= render "shared/footer" %>
