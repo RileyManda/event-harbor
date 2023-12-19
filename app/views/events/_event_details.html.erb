@@ -1,20 +1,19 @@
+<!-- _event_details.html.erb -->
 <%= render "shared/dashboard_layout" %>
 <div class="mx-full md:w-2/3 w-full flex">
-
-
   <div class="mx-auto">
     <% if notice.present? %>
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
+
     <%= render @event %>
+
     <%= link_to "Edit this event", edit_event_path(@event), class: "button border-none mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
       <%= button_to "Destroy this event", event_path(@event), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
     <%= link_to "Back to events", events_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
-   <div class="mt-4">
-   <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Happening Now</span></div>
 </div>
 
 <%= render "shared/footer" %>
