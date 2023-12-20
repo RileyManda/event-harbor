@@ -28,5 +28,13 @@
   { "name": "Sled", "emoji": "🛷" },
   { "name": "Ice Skate", "emoji": "⛸️" },
   { "name": "Curling Stone", "emoji": "🥌" },
-  { "name": "Performing Arts", "emoji": "🎭" }
+  { "name": "Performing Arts", "emoji": "🎭" },
+  { "name": "Music Note", "emoji": "🎵" },
+  { "name": "Microphone", "emoji": "🎤" },
+  { "name": "Film Reel", "emoji": "🎞️" },
+  { "name": "Paint Palette", "emoji": "🎨" },
+  { "name": "Camera", "emoji": "📷" },
+  { "name": "Book", "emoji": "📚" },
+  { "name": "Dance", "emoji": "💃" },
+  { "name": "Karaoke", "emoji": "🎤" }
 ]

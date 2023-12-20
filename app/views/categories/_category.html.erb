@@ -5,4 +5,9 @@
   <div class="mb-4 flex items-center justify-center">
     <span class="text-6xl"><%= category.icon %></span>
   </div>
+  <% if action_name == "show" %>
+    <div class="mb-4 flex items-center justify-center">
+      <span class="text-6xl"><%= category.description %></span>
+    </div>
+  <% end %>
 <% end %>
