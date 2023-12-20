@@ -18,6 +18,8 @@ def new
 end
 
 
+
+
   # GET /categories/1/edit
   def edit; end
 
