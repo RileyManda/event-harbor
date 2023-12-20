@@ -8,21 +8,18 @@ class CategoriesController < ApplicationController
   end
 
   # GET /categories/1 or /categories/1.json
-def show
-  @category = Category.find(params[:id])
-  @event_count = @category.events.count
-end
+  def show
+    @category = Category.find(params[:id])
+    @event_count = @category.events.count
+  end
 
   # GET /categories/new
-def new
-  @category = Category.new
-  icons_json = File.read(Rails.root.join('app/assets/icons.json'))
-  icon_data = JSON.parse(icons_json)
-  @icon_choices = icon_data.map { |icon| ["#{icon['name']} - #{icon['emoji']}", icon['emoji']] }
-end
-
-
-
+  def new
+    @category = Category.new
+    icons_json = File.read(Rails.root.join('app/assets/icons.json'))
+    icon_data = JSON.parse(icons_json)
+    @icon_choices = icon_data.map { |icon| ["#{icon['name']} - #{icon['emoji']}", icon['emoji']] }
+  end
 
   # GET /categories/1/edit
   def edit; end
@@ -71,7 +68,7 @@ end
     @category = Category.find(params[:id])
   end
 
-def category_params
-    params.require(:category).permit(:name,:description, :icon)
+  def category_params
+    params.require(:category).permit(:name, :description, :icon)
   end
 end
