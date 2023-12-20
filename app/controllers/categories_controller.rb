@@ -14,7 +14,8 @@ class CategoriesController < ApplicationController
 def new
   @category = Category.new
   icons_json = File.read(Rails.root.join('app/assets/icons.json'))
-  @icon_choices = JSON.parse(icons_json).map { |icon| [icon[0], icon[1]] }
+  icon_data = JSON.parse(icons_json)
+  @icon_choices = icon_data.map { |icon| ["#{icon['name']} - #{icon['emoji']}", icon['emoji']] }
 end
 
 
