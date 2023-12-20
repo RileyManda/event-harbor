@@ -1,15 +1,13 @@
-<div id="<%= dom_id category %>" class="rounded-lg overflow-hidden shadow-md bg-white p-6 my-4">
+<%= link_to category_path(category), class: "block rounded-lg overflow-hidden shadow-md bg-white p-6 my-4" do %>
   <div class="mb-4">
-    <strong class="block text-lg font-medium mb-1">Category Name:</strong>
     <p class="text-gray-700"><%= category.name %></p>
   </div>
-
-  <% if action_name != "show" %>
-    <div class="flex items-center">
-      <%= link_to "Show", category, class: "rounded-md py-2 px-4 bg-gray-100 text-sm font-medium mr-2" %>
-      <%= link_to "Edit", edit_category_path(category), class: "rounded-md py-2 px-4 bg-gray-100 text-sm font-medium" %>
+  <div class="mb-4 flex items-center justify-center">
+    <span class="text-6xl"><%= category.icon %></span>
+  </div>
+  <% if action_name == "show" %>
+    <div class="mb-4 flex items-center justify-center">
+      <span class="text-2xl"><%= category.description %></span>
     </div>
-
-    <hr class="mt-6">
   <% end %>
-</div>
+<% end %>
