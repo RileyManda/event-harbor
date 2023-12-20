@@ -11,9 +11,12 @@ class CategoriesController < ApplicationController
   def show; end
 
   # GET /categories/new
-  def new
-    @category = Category.new
-  end
+def new
+  @category = Category.new
+  icons_json = File.read(Rails.root.join('app/assets/icons.json'))
+  @icon_choices = JSON.parse(icons_json).map { |icon| [icon[0], icon[1]] }
+end
+
 
   # GET /categories/1/edit
   def edit; end
@@ -58,13 +61,11 @@ class CategoriesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_category
     @category = Category.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
-  def category_params
-    params.require(:category).permit(:name)
+def category_params
+    params.require(:category).permit(:name, :icon)
   end
 end

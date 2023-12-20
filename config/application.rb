@@ -29,6 +29,8 @@ module EventHarbor
     config.autoload_lib(ignore: %w(assets tasks))
     config.assets.enabled = true
     config.assets.version = '1.0'
+    config.assets.precompile += %w(*.svg)
+
 
 
     # Configuration for the application, engines, and railties goes here.
