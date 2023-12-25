@@ -9,9 +9,9 @@ services:
     name: event_harbor
     runtime: ruby
     plan: free
-    buildCommand: "./bin/render-build.sh"
-   
-    startCommand: "./bin/rails server"
+    buildCommand: './bin/render-build.sh'
+
+    startCommand: './bin/rails server'
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -19,5 +19,3 @@ services:
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
-      - key: WEB_CONCURRENCY
-        value: 2
