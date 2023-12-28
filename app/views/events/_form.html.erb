@@ -73,10 +73,7 @@
   </div>
 </div>
 
-
-
-
-  <div class="my-5">
+<div class="my-5">
     <%= form.label :avatar %>
     <%= form.text_field :avatar, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
     <%= image_tag(event.avatar, alt: 'Event Avatar') if event.avatar.present? %>
@@ -86,12 +83,6 @@
     <%= form.label :banner %>
     <%= form.text_field :banner, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
     <%= image_tag(event.banner, alt: 'Event Banner') if event.banner.present? %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :images %>
-    <%= form.text_field :images, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-    <%= image_tag(event.images, alt: 'Images') if event.images.present? %>
   </div>
 
   <div class="my-5">
