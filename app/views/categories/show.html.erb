@@ -20,13 +20,23 @@
       </div>
 
     </div>
-    <div class="mt-4 flex items-center">
-      <%= link_to "Edit this category", edit_category_path(@category), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium mr-2" %>
+<div class="mt-4 flex items-center">
+  <%= link_to edit_category_path(@category), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium mr-2 flex items-center" do %>
+    <%= raw('<svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5a6 6 0 00-6 6v6a2 2 0 002 2h2a2 2 0 002-2v-6a4 4 0 018 0v3a2 2 0 002 2h2a2 2 0 002-2v-3a6 6 0 00-6-6z"></path></svg>Edit') %>
+    Edit
+  <% end %>
 
-      <%= button_to "Destroy this category", category_path(@category), method: :delete, class: "rounded-lg py-3 px-5 bg-gray-100 font-medium mr-2" %>
+  <%= button_to category_path(@category), method: :delete, class: "rounded-lg py-3 px-5 bg-gray-100 font-medium mr-2 flex items-center" do %>
+    <%= raw('<svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6a2 2 0 012-2h14a2 2 0 012 2M5 6V20a2 2 0 002 2h10a2 2 0 002-2V6m-2 0l-4-4m0 0l-4 4m4-4v12"></path></svg>Delete') %>
+    Delete
+  <% end %>
 
-      <%= link_to "Back to categories", categories_path, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    </div>
+  <%= link_to categories_path, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium flex items-center" do %>
+    <%= raw('<svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>Back') %>
+    All Categories
+  <% end %>
+</div>
+
   </div>
 </div>
 <%= render "shared/footer" %>
