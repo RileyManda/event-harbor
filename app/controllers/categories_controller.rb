@@ -22,8 +22,17 @@ class CategoriesController < ApplicationController
   end
 
   # GET /categories/1/edit
-  def edit; end
+  def edit
+  @icon_choices = icon_choices_for_form
+  end
 
+
+
+  def icon_choices_for_form
+  icons_json = File.read(Rails.root.join('app/assets/icons.json'))
+  icon_data = JSON.parse(icons_json)
+  icon_data.map { |icon| ["#{icon['name']} - #{icon['emoji']}", icon['emoji']] }
+end
   # POST /categories or /categories.json
   def create
     @category = Category.new(category_params)
