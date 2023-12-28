@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_20_154100) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_28_162832) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,7 +26,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_20_154100) do
     t.string "name"
     t.string "title"
     t.string "description"
-    t.string "images"
     t.boolean "reservation"
     t.boolean "visibility"
     t.integer "price"

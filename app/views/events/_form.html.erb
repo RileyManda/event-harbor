@@ -19,11 +19,10 @@
     <%= form.label :title %>
     <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
-
-  <div class="my-5">
+ <div class="my-5">
     <%= form.label :description %>
-    <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-    <p class="text-sm text-gray-500 mt-2">Word count: <span id="word-count">0</span></p>
+    <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", id: "event-description" %>
+    <p class="text-sm text-gray-500 mt-2">Character count: <span id="char-count">0</span>/150</p>
   </div>
 
   <div class="my-5">
@@ -73,25 +72,17 @@
   </div>
 </div>
 
+<div class="my-5">
+  <%= form.label :avatar %>
+  <%= form.text_field :avatar, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <%= image_tag(event.avatar, alt: 'Event Avatar', class: 'rounded-full') if event.avatar.present? %>
+</div>
 
-
-
-  <div class="my-5">
-    <%= form.label :avatar %>
-    <%= form.text_field :avatar, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-    <%= image_tag(event.avatar, alt: 'Event Avatar') if event.avatar.present? %>
-  </div>
 
   <div class="my-5">
     <%= form.label :banner %>
     <%= form.text_field :banner, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
     <%= image_tag(event.banner, alt: 'Event Banner') if event.banner.present? %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :images %>
-    <%= form.text_field :images, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-    <%= image_tag(event.images, alt: 'Images') if event.images.present? %>
   </div>
 
   <div class="my-5">
@@ -104,3 +95,14 @@
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>
+<script>
+  document.addEventListener("turbolinks:load", function () {
+    const descriptionTextarea = document.getElementById('event-description');
+    const charCountSpan = document.getElementById('char-count');
+
+    descriptionTextarea.addEventListener('input', function () {
+      const charCount = this.value.length;
+      charCountSpan.textContent = charCount;
+    });
+  });
+</script>
