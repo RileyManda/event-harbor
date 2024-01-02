@@ -82,8 +82,6 @@ Event Harbor is a Rails web application that allows users to add, update, and de
     <li><a href="https://github.com/heartcombo/devise">Devise</a></li>
   </ul>
 
-
-
   <ul>
     <li><a href="https://github.com/ged/ruby-pg">Ruby Pg</a></li>
   </ul>
