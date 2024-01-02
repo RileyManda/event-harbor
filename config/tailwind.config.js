@@ -13,15 +13,6 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
-      theme: {
-        colors: {
-          'floating-buttons': '#e7615f',
-          'floating-buttons-hover': '#f9fafb',
-        },
-      },
-      container: {
-        center: true,
-      },
     },
   },
   plugins: [
