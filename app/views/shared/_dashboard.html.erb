@@ -1,7 +1,8 @@
 <%= render "shared/navbar" %>
 <%= render "shared/sidebar" %>
-<div class="mx-auto">
-  <%= yield :content %>
-</div>
-<%= render "shared/footer" %>
 
+<div class="container flex">
+  <%= render "shared/dashboard_content" %>
+</div>
+
+<%= render "shared/footer" %>
