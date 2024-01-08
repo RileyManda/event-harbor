@@ -12,10 +12,9 @@ Rails.application.routes.draw do
   unauthenticated do
     root 'pages#home'
   end
-  resources :dashboard
   resources :categories
   resources :participants
-  resources :homes
+  resources :dashboard 
   resources :events
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

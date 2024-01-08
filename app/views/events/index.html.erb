@@ -1,6 +1,7 @@
-<%= render "shared/navbar"%>
-<%= render "shared/trending_events" %>
 
+
+<% content_for :content do %>
+<%= render "shared/trending_events" %>
 <div class="mx-auto md:w-2/3 w-full">
   <% if notice.present? %>
    <%= render "shared/notifications"%>
@@ -29,4 +30,5 @@
     <% end %>
   </div>
 </div>
-  <%= render "shared/footer" %>
+<% end %>
+<%= render "shared/dashboard" %>
