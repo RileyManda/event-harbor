@@ -20,7 +20,7 @@
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm text-gray-900' %>
         </div>
 
-        <div class="space-y-1 mx-4">
+        <div class="space-y-1 mx-4 relative" data-controller="password-visibility">
           <%= f.password_field :password, autocomplete: "current-password",placeholder: "Password", class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
         </div>
           <% if devise_mapping.rememberable? %>
