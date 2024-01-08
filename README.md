@@ -16,7 +16,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-    <!-- - [🚀 Live Demo](#live-demo) -->
+    - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -82,8 +82,6 @@ Event Harbor is a Rails web application that allows users to add, update, and de
     <li><a href="https://github.com/heartcombo/devise">Devise</a></li>
   </ul>
 
-
-
   <ul>
     <li><a href="https://github.com/ged/ruby-pg">Ruby Pg</a></li>
   </ul>
@@ -120,12 +118,12 @@ Event Harbor is a Rails web application that allows users to add, update, and de
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
-<!--
+
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 > Live Demo of this application:
 
-- [Live Demo Link](https://Event Harbor-mier.onrender.com/) -->
+- [Live Demo Link](https://event-harbor.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
