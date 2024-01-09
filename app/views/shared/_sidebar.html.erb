@@ -1,9 +1,120 @@
-<aside class="bg-gray-800 text-white w-64 min-h-screen p-4">
-  <nav>
- <ul class="space-y-2">
-    <li><%= link_to "Dashboard", authenticated_root_path, class: "block py-2 text-white hover:text-neutral-100" %></li>
-    <li><%= link_to "Events", events_path, class: "block py-2 text-white hover:text-neutral-100" %></li>
-    <li><%= link_to "Categories", categories_path, class: "block py-2 text-white hover:text-neutral-100" %></li>
-  </ul>
-  </nav>
+
+<button data-drawer-target="separator-sidebar" data-drawer-toggle="separator-sidebar" aria-controls="separator-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+   <span class="sr-only">Open sidebar</span>
+   <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+   <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+   </svg>
+</button>
+
+<aside id="separator-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+   <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+      <ul class="space-y-2 font-medium">
+           <li>
+            <%= link_to authenticated_root_path, class: "flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" do %>
+              <svg width="32px" height="32px" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_14_1960)"> <path d="M25.545 8H11C9.34315 8 8 9.34315 8 11V28.931C8 30.5879 9.34315 31.931 11 31.931H25.545C27.2019 31.931 28.545 30.5879 28.545 28.931V11C28.545 9.34315 27.2019 8 25.545 8Z" stroke="#fafafa" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M52.94 8H38.395C36.7382 8 35.395 9.34315 35.395 11V15.272C35.395 16.9289 36.7382 18.272 38.395 18.272H52.94C54.5969 18.272 55.94 16.9289 55.94 15.272V11C55.94 9.34315 54.5969 8 52.94 8Z" stroke="#ac3370" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M52.94 25.121H38.395C36.7382 25.121 35.395 26.4641 35.395 28.121V52.94C35.395 54.5969 36.7382 55.94 38.395 55.94H52.94C54.5969 55.94 55.94 54.5969 55.94 52.94V28.121C55.94 26.4641 54.5969 25.121 52.94 25.121Z" stroke="#fafafa" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M25.545 38.818H11C9.34315 38.818 8 40.1611 8 41.818V52.939C8 54.5958 9.34315 55.939 11 55.939H25.545C27.2019 55.939 28.545 54.5958 28.545 52.939V41.818C28.545 40.1611 27.2019 38.818 25.545 38.818Z" stroke="#ac3370" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_14_1960"> <rect width="51.94" height="51.939" fill="white" transform="translate(6 6)"></rect> </clipPath> </defs> </g></svg>
+                  <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
+                  <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
+               </svg>
+
+               <span class="ms-3">Dashboard</span>
+            <% end %>
+         </li>
+          <li>
+            <%= link_to events_path, class: "flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" do %>
+<svg width="32px" height="32px" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M52.618 13.061H12.142C9.20051 13.061 6.81598 15.4456 6.81598 18.387V47.501C6.81598 50.4425 9.20051 52.827 12.142 52.827H52.618C55.5595 52.827 57.944 50.4425 57.944 47.501V18.387C57.944 15.4456 55.5595 13.061 52.618 13.061Z" stroke="#ffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6.81598 24.423H57.944" stroke="#ffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21.018 10.22V15.901" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M43.742 10.22V15.901" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M13.714 34.22H19.047" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M13.714 42.22H19.047" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M29.713 34.22H35.047" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M45.714 34.22H51.047" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+               <span class="flex-1 ms-3 whitespace-nowrap">Events</span>
+            <% end %>
+         </li>
+
+          <li>
+            <%= link_to categories_path, class: "flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" do %>
+             <svg width="32px" height="32px" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_14_1944)"> <path d="M48.718 37.163L54.764 40.186C55.1344 40.3711 55.446 40.6556 55.6637 41.0078C55.8815 41.36 55.9968 41.7659 55.9968 42.18C55.9968 42.5941 55.8815 43 55.6637 43.3522C55.446 43.7044 55.1344 43.9889 54.764 44.174L33 55.062C32.6898 55.2182 32.3473 55.2995 32 55.2995C31.6527 55.2995 31.3102 55.2182 31 55.062L9.23601 44.174C8.86559 43.9889 8.55404 43.7044 8.33629 43.3522C8.11854 43 8.0032 42.5941 8.0032 42.18C8.0032 41.7659 8.11854 41.36 8.33629 41.0078C8.55404 40.6556 8.86559 40.3711 9.23601 40.186L15.282 37.163" stroke="#ac3370" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M48.718 27.129L54.763 30.149C55.1334 30.3341 55.445 30.6186 55.6627 30.9708C55.8805 31.323 55.9958 31.7289 55.9958 32.143C55.9958 32.5571 55.8805 32.963 55.6627 33.3152C55.445 33.6674 55.1334 33.9519 54.763 34.137L48.718 37.16L33 45.029C32.6896 45.1846 32.3472 45.2655 32 45.2655C31.6528 45.2655 31.3104 45.1846 31 45.029L15.28 37.163L9.235 34.14C8.86458 33.9549 8.55303 33.6704 8.33528 33.3182C8.11753 32.966 8.0022 32.5601 8.0022 32.146C8.0022 31.7319 8.11753 31.326 8.33528 30.9738C8.55303 30.6216 8.86458 30.3371 9.235 30.152L15.28 27.129" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M31 9.235L9.23299 20.12C8.86262 20.3052 8.55113 20.5899 8.33343 20.9422C8.11573 21.2945 8.00043 21.7004 8.00043 22.1145C8.00043 22.5286 8.11573 22.9345 8.33343 23.2868C8.55113 23.6391 8.86262 23.9238 9.23299 24.109L31 34.994C31.3097 35.1489 31.6512 35.2295 31.9975 35.2295C32.3438 35.2295 32.6853 35.1489 32.995 34.994L54.767 24.109C55.1374 23.9238 55.4489 23.6391 55.6666 23.2868C55.8843 22.9345 55.9996 22.5286 55.9996 22.1145C55.9996 21.7004 55.8843 21.2945 55.6666 20.9422C55.4489 20.5899 55.1374 20.3052 54.767 20.12L33 9.235C32.6897 9.07914 32.3472 8.99797 32 8.99797C31.6527 8.99797 31.3103 9.07914 31 9.235Z" stroke="#ac3370" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_14_1944"> <rect width="51.999" height="50.298" fill="white" transform="translate(6 7)"></rect> </clipPath> </defs> </g></svg>
+               <span class="flex-1 ms-3 whitespace-nowrap">Categories</span>
+            <% end %>
+         </li>
+
+          <li>
+            <%= link_to categories_path, class: "flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" do %>
+           <svg width="32px" height="32px" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M31.521 55.515V39.515" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M31.521 28.845V7.51501" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M31.521 39.514C34.468 39.514 36.857 37.125 36.857 34.178C36.857 31.231 34.468 28.842 31.521 28.842C28.574 28.842 26.185 31.231 26.185 34.178C26.185 37.125 28.574 39.514 31.521 39.514Z" stroke="#426AB2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M50.191 55.515V31.515" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M50.191 20.845V7.51501" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M50.19 31.514C53.137 31.514 55.526 29.125 55.526 26.178C55.526 23.231 53.137 20.842 50.19 20.842C47.243 20.842 44.854 23.231 44.854 26.178C44.854 29.125 47.243 31.514 50.19 31.514Z" stroke="#426AB2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.861 55.515V31.515" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.861 20.845V7.51501" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.857 31.514C15.804 31.514 18.193 29.125 18.193 26.178C18.193 23.231 15.804 20.842 12.857 20.842C9.91 20.842 7.521 23.231 7.521 26.178C7.521 29.125 9.91 31.514 12.857 31.514Z" stroke="#426AB2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+               <span class="flex-1 ms-3 whitespace-nowrap">Analytics</span>
+               <span class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
+            <% end %>
+         </li>
+
+         <li>
+            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z"/>
+               </svg>
+               <span class="flex-1 ms-3 whitespace-nowrap">Inbox</span>
+               <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
+            </a>
+         </li>
+         <li>
+            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                  <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"/>
+               </svg>
+               <span class="flex-1 ms-3 whitespace-nowrap">Users</span>
+            </a>
+         </li>
+         <li>
+            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                  <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z"/>
+               </svg>
+               <span class="flex-1 ms-3 whitespace-nowrap">Products</span>
+            </a>
+         </li>
+      </ul>
+      <ul class="pt-4 mt-4 space-y-2 font-medium border-t border-gray-200 dark:border-gray-700">
+         <li>
+            <a href="#" class="flex items-center p-2 text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
+               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 20">
+                  <path d="M7.958 19.393a7.7 7.7 0 0 1-6.715-3.439c-2.868-4.832 0-9.376.944-10.654l.091-.122a3.286 3.286 0 0 0 .765-3.288A1 1 0 0 1 4.6.8c.133.1.313.212.525.347A10.451 10.451 0 0 1 10.6 9.3c.5-1.06.772-2.213.8-3.385a1 1 0 0 1 1.592-.758c1.636 1.205 4.638 6.081 2.019 10.441a8.177 8.177 0 0 1-7.053 3.795Z"/>
+               </svg>
+               <span class="ms-3">Upgrade to Pro</span>
+            </a>
+         </li>
+         <li>
+            <a href="#" class="flex items-center p-2 text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
+               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
+                  <path d="M16 14V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 0 0 0-2h-1v-2a2 2 0 0 0 2-2ZM4 2h2v12H4V2Zm8 16H3a1 1 0 0 1 0-2h9v2Z"/>
+               </svg>
+               <span class="ms-3">Notes</span>
+            </a>
+         </li>
+         <li>
+            <a href="#" class="flex items-center p-2 text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
+               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                  <path d="M18 0H6a2 2 0 0 0-2 2h14v12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Z"/>
+                  <path d="M14 4H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2ZM2 16v-6h12v6H2Z"/>
+               </svg>
+               <span class="ms-3">Performance</span>
+            </a>
+         </li>
+
+         <li>
+          <a href="#" class="flex items-center p-2 text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
+                <svg  width="32px" height="32px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 512m-10 0a10 10 0 1 0 20 0 10 10 0 1 0-20 0Z" fill="#c62e67"></path><path d="M512 306.8c27.7 0 54.6 5.4 79.8 16.1 24.4 10.3 46.4 25.1 65.2 44s33.6 40.8 44 65.2c10.7 25.3 16.1 52.1 16.1 79.8 0 27.7-5.4 54.6-16.1 79.8-10.3 24.4-25.1 46.4-44 65.2-18.8 18.8-40.8 33.6-65.2 44-25.3 10.7-52.1 16.1-79.8 16.1-27.7 0-54.6-5.4-79.8-16.1-24.4-10.3-46.4-25.1-65.2-44-18.8-18.8-33.6-40.8-44-65.2-10.7-25.3-16.1-52.1-16.1-79.8 0-27.7 5.4-54.6 16.1-79.8 10.3-24.4 25.1-46.4 44-65.2s40.8-33.6 65.2-44c25.2-10.6 52.1-16.1 79.8-16.1m0-22c-125.4 0-227.1 101.7-227.1 227.1S386.6 739.1 512 739.1c125.4 0 227.1-101.7 227.1-227.1S637.4 284.8 512 284.8z" fill="#c62e6739393A"></path><path d="M512 618.7c-58.9 0-106.8-47.9-106.8-106.8S453.1 405.1 512 405.1 618.8 453 618.8 511.9 570.9 618.7 512 618.7z m0-193.5c-47.9 0-86.8 38.9-86.8 86.8s38.9 86.8 86.8 86.8 86.8-38.9 86.8-86.8-38.9-86.8-86.8-86.8z" fill="#c62e67"></path><path d="M544.2 107.3l34.1 92.3 7.4 19.9 20.2 6.6c10.3 3.4 32.1 12.9 43.4 18.1l18.7 8.6 18.6-8.9 87.9-41.8 46.4 46.5-41.2 89.4-8.9 19.3 9.6 19c6.8 13.4 12.6 27.5 17.4 41.9l6.7 20.5 20.3 7.2 91.7 32.6v65.7l-92.3 34.1-19.9 7.4-6.6 20.2c-4.7 14.4-10.6 28.4-17.4 41.9l-9.8 19.3 9.3 19.5 41.8 87.9-46.5 46.5-89.1-41.3-19.3-8.9-19 9.6c-13.4 6.8-27.5 12.6-41.9 17.4l-20.5 6.7-7.2 20.3-32.6 91.7h-65.7l-34.1-92.3-7.4-19.9-20.2-6.6c-10.3-3.4-32.1-12.9-43.4-18.1L356 771l-18.6 8.9-87.9 41.8-46.4-46.5 41.2-89.3 8.9-19.3-9.6-19c-6.8-13.4-12.6-27.5-17.4-41.9l-6.7-20.5-20.3-7.2-91.7-32.6v-65.7l92.3-34.1 19.9-7.4 6.6-20.2c3.4-10.3 12.9-32.1 18.1-43.4l8.6-18.7-8.9-18.6-41.8-87.9 46.4-46.4 89.3 41.2 19.3 8.9 19-9.6c13.4-6.8 27.5-12.6 41.9-17.4l20.5-6.7 7.2-20.3 32.6-91.7h65.7m30.7-44.1H447.4l-43 121c-16.6 5.5-32.7 12.1-48.1 19.9l-117.2-54-90.1 90.1 55.2 116s-14.5 31.4-19.9 48.1l-121 44.7v127.4l121 43c5.5 16.6 12.1 32.6 19.9 48l-54 117.2 90.1 90.1 116-55.2s31.4 14.5 48.1 19.9l44.7 121h127.4l43-121c16.6-5.5 32.6-12.1 48-19.9l117.2 54 90.1-90.1-55.2-116c7.8-15.4 14.5-31.4 19.9-48l121-44.7V447.4l-121-43c-5.5-16.6-12.1-32.6-19.9-48l54-117.2-90.1-90.1-115.9 55.2s-31.5-14.5-48.1-19.9L574.9 63.3z" fill="#c62e6739393A"></path></g></svg>
+               <span class="ms-3">Performance</span>
+            </a>
+         </li>
+
+         <li>
+            <a href="#" class="flex items-center p-2 text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
+                 <svg width="32px" height="32px" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_14_1914)"> <path d="M12.132 26.529H16.055V40.3H12.132C11.0365 40.3 9.98578 39.8649 9.21094 39.0905C8.4361 38.316 8.00053 37.2655 8 36.17V30.661C8 29.5651 8.43533 28.5141 9.21023 27.7392C9.98514 26.9643 11.0361 26.529 12.132 26.529V26.529Z" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M51.867 40.303H47.944V26.529H51.867C52.9629 26.529 54.0139 26.9643 54.7888 27.7392C55.5637 28.5141 55.999 29.5651 55.999 30.661V36.17C55.9991 36.7127 55.8924 37.2501 55.6848 37.7516C55.4772 38.253 55.1728 38.7086 54.7891 39.0924C54.4054 39.4762 53.9499 39.7807 53.4485 39.9884C52.9471 40.1961 52.4097 40.303 51.867 40.303V40.303Z" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M16.056 40.302V14.002C16.056 12.9411 16.4774 11.9237 17.2276 11.1736C17.9777 10.4234 18.9951 10.002 20.056 10.002H43.944C45.0049 10.002 46.0223 10.4234 46.7724 11.1736C47.5226 11.9237 47.944 12.9411 47.944 14.002V40.302" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M41.058 51.321H43.813C44.9089 51.321 45.9599 50.8857 46.7348 50.1108C47.5097 49.3359 47.945 48.2849 47.945 47.189V40.302" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M38.303 48.567H30.039C28.5175 48.567 27.284 49.8005 27.284 51.322C27.284 52.8435 28.5175 54.077 30.039 54.077H38.303C39.8245 54.077 41.058 52.8435 41.058 51.322C41.058 49.8005 39.8245 48.567 38.303 48.567Z" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_14_1914"> <rect width="51.999" height="48.076" fill="white" transform="translate(6 8)"></rect> </clipPath> </defs> </g></svg>
+               <span class="ms-3">Support</span>
+            </a>
+         </li>
+            <li>
+            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <svg width="32px" height="32px" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_14_1971)"> <path d="M21.486 55.94L48.453 55.94C50.935 55.94 52.947 53.928 52.947 51.446L52.947 12.494C52.947 10.012 50.935 8 48.453 8L21.486 8C19.004 8 16.992 10.012 16.992 12.494L16.992 51.446C16.992 53.928 19.004 55.94 21.486 55.94Z" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M28.976 26.011L34.969 31.97L28.976 37.996" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M34.969 31.97H11" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_14_1971"> <rect width="45.947" height="51.94" fill="white" transform="translate(9 6)"></rect> </clipPath> </defs> </g></svg>
+               <span class="flex-1 ms-3 whitespace-nowrap">SignOut</span>
+            </a>
+         </li>
+      </ul>
+   </div>
 </aside>
+
+
