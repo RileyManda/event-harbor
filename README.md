@@ -272,7 +272,7 @@ I would like to express my sincere gratitude to [Microverse](https://github.com/
 
 ## 📝 License <a name="license"></a>
 
-[MIT License](https://github.com/RileyManda/event-harbor/blob/dev/LICENSE)
+[MIT License](/LICENSE.md)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
