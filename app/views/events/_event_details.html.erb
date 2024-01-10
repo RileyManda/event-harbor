@@ -1,0 +1,16 @@
+<% content_for :content do %>
+<div class="mx-full md:w-2/3 w-full flex">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <%= render "shared/notifications"%>
+    <% end %>
+    <%= render @event %>
+    <%= link_to "Edit this event", edit_event_path(@event), class: "button border-none mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="inline-block ml-2">
+      <%= button_to "Delete event", event_path(@event), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    </div>
+    <%= link_to "Back to events", events_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+</div>
+<% end %>
+<%= render "shared/dashboard" %>

@@ -8,15 +8,29 @@ class CategoriesController < ApplicationController
   end
 
   # GET /categories/1 or /categories/1.json
-  def show; end
+  def show
+    @category = Category.find(params[:id])
+    @event_count = @category.events.count
+  end
 
   # GET /categories/new
   def new
     @category = Category.new
+    icons_json = File.read(Rails.root.join('app/assets/icons.json'))
+    icon_data = JSON.parse(icons_json)
+    @icon_choices = icon_data.map { |icon| ["#{icon['name']} - #{icon['emoji']}", icon['emoji']] }
   end
 
   # GET /categories/1/edit
-  def edit; end
+  def edit
+    @icon_choices = icon_choices_for_form
+  end
+
+  def icon_choices_for_form
+    icons_json = File.read(Rails.root.join('app/assets/icons.json'))
+    icon_data = JSON.parse(icons_json)
+    icon_data.map { |icon| ["#{icon['name']} - #{icon['emoji']}", icon['emoji']] }
+  end
 
   # POST /categories or /categories.json
   def create
@@ -51,20 +65,18 @@ class CategoriesController < ApplicationController
     @category.destroy!
 
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
+      format.html { redirect_to categories_url, notice: 'Category was successfully deleted.' }
       format.json { head :no_content }
     end
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_category
     @category = Category.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :description, :icon)
   end
 end

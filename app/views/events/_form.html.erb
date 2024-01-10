@@ -2,7 +2,6 @@
   <% if event.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
       <ul>
         <% event.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,33 +9,33 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="my-5">
+  <div class="mb-6">
     <%= form.label :name %>
     <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
-   <div class="my-5">
+
+  <div class="my-5">
     <%= form.label :title %>
     <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
+ <div class="my-5">
     <%= form.label :description %>
-    <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_field :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", id: "event-description" %>
+    <p class="text-sm text-gray-500 mt-2">Character count: <span id="char-count">0</span>/150</p>
   </div>
 
-
-   <div class="my-5">
+  <div class="my-5">
     <%= form.label :price %>
     <%= form.text_field :price, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
- <div class="my-5">
+  <div class="my-5">
     <%= form.label :tickets %>
     <%= form.number_field :tickets, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-    <div class="my-5">
+  <div class="my-5">
     <%= form.label :date %>
     <%= form.text_field :date, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
@@ -51,7 +50,7 @@
     <%= form.text_field :start_time, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-    <div class="my-5">
+  <div class="my-5">
     <%= form.label :end_time %>
     <%= form.text_field :end_time, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
@@ -60,35 +59,35 @@
     <%= form.label :capacity %>
     <%= form.text_field :capacity, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
-  <div class="my-5">
-    <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: "Select a category" }, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+
+<div class="my-5 relative">
+  <%= form.label :category_id, class: "block text-sm font-medium leading-6 text-gray-900" %>
+  <div class="relative mt-2">
+    <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: "Select a category" }, class: "relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6" %>
+    <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+      <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z" clip-rule="evenodd" />
+      </svg>
+    </span>
   </div>
+</div>
 
 <div class="my-5">
-    <%= form.label :avatar %>
-    <%= form.text_field :avatar, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-    <%= image_tag(event.avatar, alt: 'Event Avatar') if event.avatar.present? %>
-  </div>
+  <%= form.label :avatar %>
+  <%= form.text_field :avatar, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <%= image_tag(event.avatar, alt: 'Event Avatar', class: 'rounded-full') if event.avatar.present? %>
+</div>
 
   <div class="my-5">
     <%= form.label :banner %>
     <%= form.text_field :banner, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
     <%= image_tag(event.banner, alt: 'Event Banner') if event.banner.present? %>
   </div>
-
 <div class="my-5">
-    <%= form.label :images %>
-    <%= form.text_field :images, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-    <%= image_tag(event.images, alt: 'Images') if event.images.present? %>
-  </div>
-
-<div class="my-5">
-    <%= form.label :visibility %>
-    <%= form.check_box :visibility, { class: "block mt-2 h-5 w-5" }, false, true %>
-    <%= form.hidden_field :visibility, value: false %>
-  </div>
-
+  <%= form.label :Visibility, class: "block font-medium mb-1" %>
+  <p>Set event visiblity to :<b> <i>Public ☑️ OR Private ☐ </i></b>using the checkbox.</p>
+  <%= form.check_box :event_type, { class: "block mt-2 h-5 w-5" }, "Public", "Private" %>
+</div>
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
