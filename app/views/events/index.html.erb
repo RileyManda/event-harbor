@@ -1,10 +1,12 @@
 <% content_for :content do %>
+
+
+<div class="p-4 sm:ml-64">
   <div class="mx-auto md:w-1/6 w-full">
     <% if notice.present? %>
       <%= render "shared/notifications" %>
     <% end %>
 </div>
-<div class="mx-auto">
         <%= render "shared/trending_events" %>
     <div class="fixed bottom-0 flex justify-between items-center">
       <%= link_to new_event_path, class: "p-0 w-12 h-12 bg-red-500 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none flex items-center justify-center fixed bottom-4 right-2 z-50" do %>
