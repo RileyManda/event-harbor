@@ -3,7 +3,12 @@
 This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License.
 
 
-- **Access|Use** — copying and redistribution of this project,icons and code and other material in any medium or format is not permitted without the owners permission.
+- **Access|Use** — copying and redistribution of this project,icons and code and other material in any medium or format is not permitted without the developers consent.
+
+Contact Developers for permission to use this project,icons and code and other material in any medium or format.:
+- [Cixhub](https://github.com/cixhub)
+- [RileyManda](https://github.com/RileyManda)
+
 
 Under the following terms:
 
