@@ -13,6 +13,13 @@
       <strong class="block font-medium mb-1">Reservations:</strong>
       <%= event.reservation %>
     </div>
+    <div class="flex">
+  <p class="bottom-0 left-7 mb-4 ml-6 mr-10">People attending this event</p>
+  <div class="items-center">
+    <%= image_tag(event.avatar, alt: 'Event Avatar', class: 'w-10 h-10 border-2 border-white rounded-full dark:border-gray-800') if event.avatar.present? %>
+  </div>
+  <a class="flex items-center justify-center w-10 h-10 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800" href="#">+99</a>
+</div>
 
 <div class="my-5">
   <strong class="block font-medium mb-1">Event Visibility:</strong>
@@ -24,18 +31,4 @@
       <hr class="mt-6">
     <% end %>
   </div>
-
-
-
-
-
-
-<div class="flex">
-  <p class="bottom-0 left-7 mb-4 ml-6 mr-10">People attending this event</p>
-  <div class="items-center">
-    <%= image_tag(event.avatar, alt: 'Event Avatar', class: 'w-10 h-10 border-2 border-white rounded-full dark:border-gray-800') if event.avatar.present? %>
-  </div>
-  <a class="flex items-center justify-center w-10 h-10 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800" href="#">+99</a>
-</div>
-
 </div>
