@@ -6,12 +6,18 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
     './app/views/**/*.{erb,haml,html,slim}',
-    './node_modules/flowbite/**/*.js',
+    './node_modules/flowbite/**/*.js'
   ],
   theme: {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+      },
+      theme: {
+        colors: {
+          'floating-buttons': '#e7615f',
+          'floating-buttons-hover': '#f9fafb',
+        },
       },
       container: {
         center: true,
@@ -23,6 +29,6 @@ module.exports = {
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/container-queries'),
-    require('flowbite/plugin'),
+    require('flowbite/plugin')
   ]
 }

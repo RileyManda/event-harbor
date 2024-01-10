@@ -1,32 +1,32 @@
-<%= render "shared/dashboard_layout" %>
-<%= render "shared/trending_events" %>
-
-<div class="mx-auto md:w-2/3 w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
-
-  <div class="flex justify-between items-center mb-5">
-    <h1 class="font-bold text-4xl">Events</h1>
-    <%= link_to "New event", new_event_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
-
-  <div id="events" class="grid grid-cols-2 md:grid-cols-3 gap-6 drop-shadow-md">
-    <% @events.each do |event| %>
-      <%= link_to event_path(event) do %>
-        <div class="bg-white p-4 rounded-lg shadow-md">
-        <div class="relative">
-      <%= image_tag(event.avatar, alt: 'Event Avatar', class: 'w-10 h-10 rounded-full') if event.avatar.present? %>
-      <span class="bottom-0 left-7 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-      </div>
-          <%= image_tag(event.banner, alt: 'Event Banner', class: 'rounded-t-lg') if event.banner.present? %>
-          <h2 class="text-lg font-semibold mb-2"><%= event.name %></h2>
-          <p class="text-gray-600"><%= event.description %></p>
-          <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Happening Now</span>
-        </div>
-      <% end %>
+<% content_for :content do %>
+<div class="p-4 sm:ml-64">
+  <div class="mx-auto md:w-1/6 w-full">
+    <% if notice.present? %>
+      <%= render "shared/notifications" %>
     <% end %>
-  </div>
 </div>
-
-<%= render "shared/footer" %>
+        <%= render "shared/trending_events" %>
+    <div id="events" class="grid grid-cols-2 md:grid-cols-3 gap-6 drop-shadow-md">
+      <% @events.each do |event| %>
+        <%= link_to event_path(event) do %>
+          <div class="bg-white p-4 rounded-lg shadow-md">
+            <div class="relative">
+              <%= image_tag(event.avatar, alt: 'Event Avatar', class: 'w-10 h-10 rounded-full') if event.avatar.present? %>
+              <span class="bottom-0 left-7 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+            </div>
+            <%= image_tag(event.banner, alt: 'Event Banner', class: 'rounded-t-lg') if event.banner.present? %>
+            <h2 class="text-lg font-semibold mb-2"><%= event.name %></h2>
+            <p class="text-gray-600"><%= event.description %></p>
+            <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Happening Now</span>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+     <div class="fixed bottom-0 flex justify-between items-center">
+      <%= link_to new_event_path, class: "p-0 w-12 h-12 bg-red-500 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none flex items-center justify-center fixed bottom-4 right-2 z-50" do %>
+       <svg width="130px" height="130px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 21H6.2C5.0799 21 4.51984 21 4.09202 20.782C3.71569 20.5903 3.40973 20.2843 3.21799 19.908C3 19.4802 3 18.9201 3 17.8V8.2C3 7.0799 3 6.51984 3.21799 6.09202C3.40973 5.71569 3.71569 5.40973 4.09202 5.21799C4.51984 5 5.0799 5 6.2 5H17.8C18.9201 5 19.4802 5 19.908 5.21799C20.2843 5.40973 20.5903 5.71569 20.782 6.09202C21 6.51984 21 7.0799 21 8.2V10M7 3V5M17 3V5M3 9H21M13.5 13.0001L7 13M10 17.0001L7 17M14 21L16.025 20.595C16.2015 20.5597 16.2898 20.542 16.3721 20.5097C16.4452 20.4811 16.5147 20.4439 16.579 20.399C16.6516 20.3484 16.7152 20.2848 16.8426 20.1574L21 16C21.5523 15.4477 21.5523 14.5523 21 14C20.4477 13.4477 19.5523 13.4477 19 14L14.8426 18.1574C14.7152 18.2848 14.6516 18.3484 14.601 18.421C14.5561 18.4853 14.5189 18.5548 14.4903 18.6279C14.458 18.7102 14.4403 18.7985 14.405 18.975L14 21Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<%= render "shared/dashboard" %>

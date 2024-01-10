@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
   devise_for :users, controllers: {
     sessions: 'devise/sessions',
     registrations: 'devise/registrations'
   }
 
   authenticated :user do
-    root 'events#index', as: :authenticated_root
+    root 'dashboard#index', as: :authenticated_root
   end
 
   unauthenticated do
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   end
   resources :categories
   resources :participants
-  resources :homes
+  resources :dashboard 
   resources :events
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
