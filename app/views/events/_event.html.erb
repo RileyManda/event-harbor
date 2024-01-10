@@ -9,15 +9,16 @@
       <%= image_tag(event.avatar, alt: 'Event Avatar', class: 'w-10 h-10 rounded-full') if event.avatar.present? %>
       <span class="bottom-0 left-7 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
     </div>
-    <p class="my-5">
+    <div class="my-5">
       <strong class="block font-medium mb-1">Reservations:</strong>
       <%= event.reservation %>
-    </p>
+    </div>
 
-    <p class="my-5">
-      <strong class="block font-medium mb-1">Event Type:</strong>
-      <%= event.visibility %>
-    </p>
+<div class="my-5">
+  <strong class="block font-medium mb-1">Event Visibility:</strong>
+  <%= event.event_type %>
+</div>
+
 
     <% if action_name != "show" %>
       <%= link_to "Show this event", event, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
