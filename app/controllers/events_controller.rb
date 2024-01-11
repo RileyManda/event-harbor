@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   # GET /events or /events.json
   def index
     @events = Event.all
+    @user_email = current_user.email if user_signed_in?
   end
 
   # GET /events/1 or /events/1.json
@@ -25,7 +26,8 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to event_url(@event), notice: 'Event was successfully created.' }
+        # Display user email in the notice message
+        format.html { redirect_to event_url(@event), notice: "Event #{@event.name} was successfully created by #{current_user.email}."}
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +40,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to event_url(@event), notice: 'Event was successfully updated.' }
+        format.html { redirect_to event_url(@event), notice: "Event #{@event.name} was successfully updated by #{current_user.email}."}
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +54,7 @@ class EventsController < ApplicationController
     @event.destroy!
 
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully deleted.' }
+      format.html { redirect_to events_url, notice: "Event  #{@event.name} was successfully deleted by #{current_user.email}." }
       format.json { head :no_content }
     end
   end
