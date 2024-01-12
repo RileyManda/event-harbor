@@ -27,7 +27,11 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.save
         # Display user email in the notice message
-        format.html { redirect_to event_url(@event), notice: "Event #{@event.name} was recently created by #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}" }
+        format.html do
+          redirect_to event_url(@event),
+                      notice: "Event #{@event.name} was recently created
+                      by #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}"
+        end
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +44,11 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to event_url(@event), notice: "Event #{@event.name} was recently updated by #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}" }
+        format.html do
+          redirect_to event_url(@event),
+                      notice: "Event #{@event.name} was recently updated
+                      by #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}"
+        end
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +62,11 @@ class EventsController < ApplicationController
     @event.destroy!
 
     respond_to do |format|
-      format.html { redirect_to events_url, notice: "Event  #{@event.name} was recently deleted by #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}" }
+      format.html do
+        redirect_to events_url,
+                    notice: "Event  #{@event.name} was recently deleted by #{current_user.email}
+        at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}"
+      end
       format.json { head :no_content }
     end
   end

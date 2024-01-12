@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
     @categories = Category.all
-     @user_email = current_user.email if user_signed_in?
+    @user_email = current_user.email if user_signed_in?
   end
 
   # GET /categories/1 or /categories/1.json
@@ -39,7 +39,11 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to category_url(@category), notice: "Category #{@category.name} was recently created by #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}" }
+        format.html do
+          redirect_to category_url(@category),
+                      notice: "Category #{@category.name} was recently created by
+                      #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}"
+        end
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -52,7 +56,11 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to category_url(@category), notice: "Category #{@category.name} was recently updated by #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}" }
+        format.html do
+          redirect_to category_url(@category),
+                      notice: "Category #{@category.name} was recently updated
+                      by #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}"
+        end
         format.json { render :show, status: :ok, location: @category }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -66,7 +74,11 @@ class CategoriesController < ApplicationController
     @category.destroy!
 
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: "Category  #{@category.name} was recently deleted by #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}" }
+      format.html do
+        redirect_to categories_url,
+                    notice: "Category  #{@category.name} was recently deleted
+                    by #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}"
+      end
       format.json { head :no_content }
     end
   end
