@@ -1,7 +1,7 @@
 <div id="<%= dom_id event %>">
   <%= image_tag(event.banner, alt: 'Event Banner', class: 'rounded-t-lg w-full') if event.banner.present? %>
   <div class="p-5">
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><%= event.name %></h5>
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><%= event.name %></h5>
     <div class="my-5">
       <%= event.description %>
     </div>
