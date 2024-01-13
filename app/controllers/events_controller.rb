@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
-    @event.tickets_left = @event.tickets
+    @event.event_type = params[:event][:event_type] == '1' ? 'Public' : 'Private'
 
     respond_to do |format|
       if @event.save
@@ -41,21 +41,25 @@ class EventsController < ApplicationController
   end
 
   # PATCH/PUT /events/1 or /events/1.json
-  def update
-    respond_to do |format|
-      if @event.update(event_params)
-        format.html do
-          redirect_to event_url(@event),
-                      notice: "Event #{@event.name} was recently updated
-                      by #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}"
-        end
-        format.json { render :show, status: :ok, location: @event }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
+def update
+  respond_to do |format|
+    if @event.update(event_params)
+      @event.event_type = params[:event][:event_type] == '1' ? 'Public' : 'Private'
+      @event.save
+
+      format.html do
+        redirect_to event_url(@event),
+                    notice: "Event #{@event.name} was recently updated
+                    by #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}"
       end
+      format.json { render :show, status: :ok, location: @event }
+    else
+      format.html { render :edit, status: :unprocessable_entity }
+      format.json { render json: @event.errors, status: :unprocessable_entity }
     end
   end
+end
+
 
   # DELETE /events/1 or /events/1.json
   def destroy
@@ -81,7 +85,7 @@ class EventsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def event_params
     params.require(:event).permit(:name, :title, :description, :reservation, :event_type, :price,
-                                  :capacity, :tickets_left, :date, :location, :start_time, :end_time, :avatar,
+                                  :capacity,:date, :location, :start_time, :end_time, :avatar,
                                   :banner, :category_id, :tickets)
   end
 end
