@@ -1,11 +1,11 @@
 <% content_for :content do %>
-<div class="p-4 sm:ml-64">
+<div class="p-4 sm:ml-64 mt-8">
   <div class="mx-auto md:w-1/6 w-full">
     <% if notice.present? %>
       <%= render "shared/notifications" %>
     <% end %>
 </div>
-<div class="mx-full md:w-2/3 w-full flex">
+<div class="mx-full md:w-2/3 w-full flex mt-8">
   <div class="mx-auto">
     <%= render @event %>
     <%= link_to "Edit this event", edit_event_path(@event), class: "button border-none mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
