@@ -1,0 +1,37 @@
+<div class="flex items-center">
+  <div class="flex items-center mx-3 relative">
+            <div>
+              <button type="button" class="flex text-sm bg-black-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-notification">
+                <svg width="30px" height =" 30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8.35179 20.2418C9.19288 21.311 10.5142 22 12 22C13.4858 22 14.8071 21.311 15.6482 20.2418C13.2264 20.57 10.7736 20.57 8.35179 20.2418Z" fill="#FDFDFD"></path> <path d="M18.7491 9V9.7041C18.7491 10.5491 18.9903 11.3752 19.4422 12.0782L20.5496 13.8012C21.5612 15.3749 20.789 17.5139 19.0296 18.0116C14.4273 19.3134 9.57274 19.3134 4.97036 18.0116C3.21105 17.5139 2.43882 15.3749 3.45036 13.8012L4.5578 12.0782C5.00972 11.3752 5.25087 10.5491 5.25087 9.7041V9C5.25087 5.13401 8.27256 2 12 2C15.7274 2 18.7491 5.13401 18.7491 9Z" fill="#FFFFFF"></path> </g>
+       <circle cx="15" cy="2" r="2" fill="red" />
+       </svg>
+              </button>
+            </div>
+            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600 w-60" id="dropdown-notification">
+              <div class="px-4 py-3" role="none">
+                <p class="text-sm font-medium text-dark-900 truncate dark:text-gray-900" role="none">
+                 Notifications
+                </p>
+              </div>
+                <ul class="py-1 bg:gray" role="none">
+                 <li class="flex items-center">
+                  <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-600 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                   <span class="ms-3">
+  <% if notice.present? %>
+    <p><%= notice %></p>
+  <% else %>
+    <p>No Notifications here</p>
+  <% end %>
+</span>
+
+    </a>
+                </li>
+
+                <li class="flex items-center">
+                 <svg width="20px" height="20px" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M31.521 55.515V39.515" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M31.521 28.845V7.51501" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M31.521 39.514C34.468 39.514 36.857 37.125 36.857 34.178C36.857 31.231 34.468 28.842 31.521 28.842C28.574 28.842 26.185 31.231 26.185 34.178C26.185 37.125 28.574 39.514 31.521 39.514Z" stroke="#426AB2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M50.191 55.515V31.515" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M50.191 20.845V7.51501" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M50.19 31.514C53.137 31.514 55.526 29.125 55.526 26.178C55.526 23.231 53.137 20.842 50.19 20.842C47.243 20.842 44.854 23.231 44.854 26.178C44.854 29.125 47.243 31.514 50.19 31.514Z" stroke="#426AB2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.861 55.515V31.515" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.861 20.845V7.51501" stroke="#c62e67" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.857 31.514C15.804 31.514 18.193 29.125 18.193 26.178C18.193 23.231 15.804 20.842 12.857 20.842C9.91 20.842 7.521 23.231 7.521 26.178C7.521 29.125 9.91 31.514 12.857 31.514Z" stroke="#426AB2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-600 dark:text-gray-900 dark:hover:bg-dark-900 dark:hover:text-white" role="menuitem">Clear All</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
