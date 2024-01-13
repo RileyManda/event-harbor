@@ -36,5 +36,9 @@
   { "name": "Camera", "emoji": "📷" },
   { "name": "Book", "emoji": "📚" },
   { "name": "Dance", "emoji": "💃" },
-  { "name": "Karaoke", "emoji": "🎤" }
+  { "name": "Karaoke", "emoji": "🎤" },
+  { "name": "Megaphone", "emoji": "📣" },
+  { "name": "Peace", "emoji": "☮️" },
+  { "name": "RaisedFist", "emoji": "✊🏽" }
+
 ]
