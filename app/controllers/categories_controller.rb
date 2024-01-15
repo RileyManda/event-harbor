@@ -58,7 +58,7 @@ class CategoriesController < ApplicationController
       if @category.update(category_params)
         format.html do
           redirect_to category_url(@category),
-                      notice: "Category was recently updated to #{@category.name} 
+                      notice: "Category was recently updated to #{@category.name}
                       by #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}"
         end
         format.json { render :show, status: :ok, location: @category }
