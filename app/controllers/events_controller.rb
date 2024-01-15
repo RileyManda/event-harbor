@@ -49,7 +49,7 @@ class EventsController < ApplicationController
 
         format.html do
           redirect_to event_url(@event),
-                      notice: "Event #{@event.name} was recently updated
+                      notice: "An Event was recently updated to #{@event.name}
                     by #{current_user.email} at #{Time.now.strftime('%B %e, %Y %H:%M:%S')}"
         end
         format.json { render :show, status: :ok, location: @event }
