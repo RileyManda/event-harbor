@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
   resources :categories
   resources :participants
-  resources :dashboard 
+  resources :dashboard
   resources :events
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
