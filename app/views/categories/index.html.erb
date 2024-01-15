@@ -1,16 +1,15 @@
 <% content_for :content do %>
-<div class="p-4 sm:ml-64 mt-8">
+<div class="p-2 sm:ml-64 mt-2">
   <div class="mx-auto md:w-1/6 w-full">
     <% if notice.present? %>
       <%= render "shared/notifications" %>
     <% end %>
 </div>
- <%= render "shared/trending_categories" %>
- <button type="button" class="text-blue-700 hover:text-white border border-blue-600 bg-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:bg-gray-900 dark:focus:ring-blue-800">All Categories</button>
+   <%= render "shared/trending_categories" %>
   <% @categories.each do |category| %>
-    <button type="button" class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">
+   <span class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300 cursor-pointer">
       <%= category.name %>
-    </button>
+    </span>
   <% end %>
      <div id="categories" class="mb-12 grid grid-cols-2 md:grid-cols-3 gap-6">
     <%= render @categories %>
