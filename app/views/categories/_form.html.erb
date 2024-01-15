@@ -31,16 +31,3 @@
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>
-
-<div id="submission-icon" class="w-2.5 h-2.5" style="display: none;">
-  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-  </svg>
-</div>
-
-<script>
-  document.addEventListener("ajax:success", function() {
-    const icon = document.getElementById("submission-icon");
-    icon.style.display = "block";
-  });
-</script>
