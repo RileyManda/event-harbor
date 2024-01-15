@@ -1,43 +1,67 @@
 <% content_for :content do %>
-<div class="p-4 sm:ml-64 mt-8">
-   <div class="mt-8 mb-8">
-      <%= link_to categories_path, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium flex items-center" do %>
-        <%= raw('<svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>All Categories') %>
-      <% end %>
+   <div class="mb-8 p-4 h-96 sm:ml-64 mt-8 bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
+        <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
+            <li class="me-2">
+                <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500">About</button>
+            </li>
+            <li class="me-2">
+                <button id="services-tab" data-tabs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false" class="inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300">Events</button>
+            </li>
+            <li class="me-2">
+                <button id="statistics-tab" data-tabs-target="#statistics" type="button" role="tab" aria-controls="statistics" aria-selected="false" class="inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300">Popularity</button>
+            </li>
+        </ul>
+        <div id="defaultTabContent">
+            <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
+    <div class="flex items-center justify-between">
+        <div>
+            <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white"><%= @category.name %></h2>
+            <p class="mb-3 text-gray-500 dark:text-gray-400"><%= @category.description %></p>
+        </div>
+        <div class="flex-shrink-0">
+            <span class="text-8xl"><%= @category.icon %></span>
+        </div>
     </div>
-  <div class="mx-auto">
-    <% if notice.present? %>
-     <%= render "shared/notifications"%>
-    <% end %>
+<a href="#" id="prefilled-form-link" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700">
+<%= link_to new_event_path, class: "inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700" do %>
+  Create An Event
+  <svg class="w-2.5 h-2.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+  </svg>
+<% end %>
 
-    <div class="block rounded-lg overflow-hidden shadow-md bg-white p-6 my-4">
-      <div class="mb-4">
-        <p class="text-gray-700"><%= @category.name %></p>
-      </div>
-      <div class="mb-4">
-        <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-orange-600/20">Number of events: <%= @event_count %></span>
-      </div>
-      <div class="mb-4 flex items-center justify-center">
-        <span class="text-6xl"><%= @category.icon %></span>
-      </div>
-      <div class="mb-4 flex items-center justify-center">
-        <span class="text-4xl"><%= @category.description %></span>
-      </div>
-
-      <div class="mt-4 flex items-center space-x-2">
-        <%= link_to edit_category_path(@category), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium flex items-center" do %>
-          <%= raw('<svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5a6 6 0 00-6 6v6a2 2 0 002 2h2a2 2 0 002-2v-6a4 4 0 018 0v3a2 2 0 002 2h2a2 2 0 002-2v-3a6 6 0 00-6-6z"></path></svg>Edit') %>
-        <% end %>
-
-        <%= button_to category_path(@category), method: :delete, class: "rounded-lg py-3 px-5 bg-gray-100 font-medium flex items-center" do %>
-          <%= raw('<svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6a2 2 0 012-2h14a2 2 0 012 2M5 6V20a2 2 0 002 2h10a2 2 0 002-2V6m-2 0l-4-4m0 0l-4 4m4-4v12"></path></svg>Delete') %>
-
-        <% end %>
-      </div>
-    </div>
-
-
-  </div>
+</a>
 </div>
+
+            <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="services" role="tabpanel" aria-labelledby="services-tab">
+                <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">Event Analytics</h2>
+                <!-- List -->
+                <ul role="list" class="space-y-4 text-gray-500 dark:text-gray-400">
+                    <li class="flex space-x-2 rtl:space-x-reverse items-center">
+                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                        </svg>
+                        <span class="leading-tight">Number of events in this category: <%= @event_count %></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">
+                <dl class="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8">
+                    <div class="flex flex-col">
+                        <dt class="mb-8 text-xl font-extrabold">73M+</dt>
+                        <dd class="text-gray-500 dark:text-gray-400">Private Companies</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="mb-2 text-xl font-extrabold">100M+</dt>
+                        <dd class="text-gray-500 dark:text-gray-400">NGO's</dd>
+                    </div>
+                    <div class="flex flex-col">
+                        <dt class="mb-2 text-xl font-extrabold">1000s</dt>
+                        <dd class="text-gray-500 dark:text-gray-400">Corporate Clients</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
 <% end %>
 <%= render "shared/dashboard" %>
