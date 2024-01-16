@@ -1,11 +1,12 @@
-<% content_for :content do %>
-<div class="p-4 sm:ml-64 mt-8">
-<div class="">
-  <h1 class="font-bold text-4xl">New event</h1>
-
+ <% content_for :content do %>
+<div class="p-4 sm:ml-64">
+<div class="mt-4">
+<%= link_to events_path, class: "rounded-lg py-3 px-5 inline-block font-medium flex items-center" do %>
+        <%= raw('<svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>All Categories') %>
+      <% end %>
+   </div>
+    <div class="mr-10"><p class="mt-2 text-4xl text-gray-900 dark:text-gray-900">New Event</p></div>
   <%= render "form", event: @event %>
-
-  <%= link_to "Back to events", events_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>
 </div>
 <% end %>
